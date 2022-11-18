@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="NewsApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:NewsApp"
+    xmlns:views="clr-namespace:NewsApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <TabBar>
+        <Tab 
+            x:Name="HomeTab"
+            Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" Route="home" />
+        </Tab>
+
+        <Tab 
+            x:Name="SectionsTab"
+            Icon="categories.png">
+            <ShellContent ContentTemplate="{DataTemplate views:SectionsPage}" Route="sections" />
+        </Tab>
+
+        <Tab 
+            x:Name="BookmarksTab"
+            Icon="bookmarks.png">
+            <ShellContent ContentTemplate="{DataTemplate views:BookmarksPage}" Route="bookmarks" />
+        </Tab>
+
+        <Tab 
+            x:Name="ProfileTab"
+            Icon="profile.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ProfilePage}" Route="profile" />
+        </Tab>
+
+    </TabBar>
+
+</Shell>
