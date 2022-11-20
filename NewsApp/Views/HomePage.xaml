@@ -61,7 +61,8 @@
 
             <FlexLayout BindableLayout.ItemsSource="{Binding Tags}"
                         Wrap="Wrap"
-                        Margin="20,0">
+                        Margin="20,0"
+                        HeightRequest="100">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Frame
