@@ -1,12 +1,71 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:NewsApp.Models"
+             xmlns:viewmodels="clr-namespace:NewsApp.ViewModels"             
              x:Class="NewsApp.Views.BookmarksPage"
+             x:DataType="viewmodels:BookmarksViewModel"
              Title="BookmarksPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Bookmarks Page!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <CollectionView ItemsSource="{Binding Articles}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:Article">
+                <Border StrokeThickness="0.5">
+                    <ContentView Padding="16">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BookmarksViewModel}}, Path=TappedCommand}"
+                                CommandParameter="{Binding .}" />
+                        </ContentView.GestureRecognizers>
+                        <Grid 
+                            ColumnDefinitions="120,*"
+                            RowDefinitions="60,40,20"
+                            ColumnSpacing="16">
+                            <Frame
+                                Padding="0"
+                                Grid.Column="0"
+                                Grid.RowSpan="3"
+                                BorderColor="Transparent"
+                                IsClippedToBounds="True">
+                                <Image 
+                                    Source="{Binding ImageURL}"
+                                    Aspect="AspectFill"/>
+                            </Frame>
+
+                            <Label
+                                Text="{Binding Title}"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                MaxLines="2"
+                                FontFamily="PoppinsSemibold"
+                                FontSize="20" />
+
+                            <Label
+                                Text="{Binding Subtitle}"
+                                TextColor="{StaticResource Gray400}"
+                                MaxLines="2"
+                                Grid.Row="1"
+                                Grid.Column="1" />
+
+                            <StackLayout 
+                                Orientation="Horizontal"
+                                Spacing="4"
+                                Grid.Row="2"
+                                Grid.Column="1">
+                                <Label
+                                    Text="{Binding Category}"
+                                    TextColor="{StaticResource Primary}" />
+                                <Label
+                                    Text="."
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Gray200}"/>
+                                <Label
+                                    Text="{Binding Time}"
+                                    TextColor="{StaticResource Gray200}"/>
+                            </StackLayout>
+                        </Grid>                        
+                    </ContentView>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
