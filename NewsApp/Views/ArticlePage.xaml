@@ -4,8 +4,7 @@
              xmlns:viewmodels="clr-namespace:NewsApp.ViewModels"
              xmlns:views="clr-namespace:NewsApp.Views"
              x:Class="NewsApp.Views.ArticlePage"
-             x:DataType="viewmodels:ArticleViewModel"
-             Title="ArticlePage">
+             x:DataType="viewmodels:ArticleViewModel">
     <ScrollView>
         <VerticalStackLayout Spacing="10">
             <Image Source="{Binding ImageURL}" HeightRequest="300" Aspect="AspectFill" />

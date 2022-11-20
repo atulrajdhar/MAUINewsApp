@@ -4,7 +4,7 @@
              xmlns:models="clr-namespace:NewsApp.Models"
              xmlns:viewmodels="clr-namespace:NewsApp.ViewModels"
              x:Class="NewsApp.Views.HomePage"
-             Title="HomePage">
+             Title="Home">
 
 
     <ContentPage.Resources>

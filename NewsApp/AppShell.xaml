@@ -5,8 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:NewsApp"
     xmlns:views="clr-namespace:NewsApp.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.FlyoutBehavior="Disabled">
 
     <TabBar>
         <Tab 

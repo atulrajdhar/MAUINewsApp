@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:NewsApp.Models"
              x:Class="NewsApp.Views.SectionsPage"
-             Title="SectionsPage">
+             Title="Sections">
     <ScrollView>
         <VerticalStackLayout Padding="16">
             <Label 

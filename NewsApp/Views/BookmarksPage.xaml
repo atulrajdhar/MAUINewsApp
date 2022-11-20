@@ -5,7 +5,7 @@
              xmlns:viewmodels="clr-namespace:NewsApp.ViewModels"             
              x:Class="NewsApp.Views.BookmarksPage"
              x:DataType="viewmodels:BookmarksViewModel"
-             Title="BookmarksPage">
+             Title="Bookmarks">
     <CollectionView ItemsSource="{Binding Articles}">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Article">
